@@ -1,0 +1,42 @@
+ata_tuple = ('hi', 6.13, 'C', 'e', 'T', True, 'k', 'e', 3, 'e', 1, 'g')
+
+letters = []
+numbers = []
+
+
+for item in data_tuple:
+    if isinstance(item, str):
+        letters.append(item)
+    else:
+        numbers.append(item)
+
+numbers.remove(6.13)
+
+if True in numbers:
+    numbers.remove(True)
+    letters.append(True)
+
+index_3 = numbers.index(3)
+index_1 = numbers.index(1)
+numbers.insert(index_3 + 1, 2)
+
+numbers.sort()
+
+# Реверсировать letters
+letters.reverse()
+
+for i in range(len(letters)):
+    if letters[i] == 'e':
+        letters[i] = 'a'
+    elif letters[i] == 'k':
+        letters[i] = 'o'
+
+# У нас есть буквы: ['C', 'T', 'g', 'o', 'a', 'a', 'a', True]
+word_letters = ['C', 'o', 'g', 'T', 'a']
+letters = word_letters
+
+letters_tuple = tuple(letters)
+numbers_tuple = tuple(numbers)
+
+print("Letters:", letters_tuple)
+print("Numbers:", numbers_tuple)
