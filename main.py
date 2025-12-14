@@ -80,7 +80,7 @@ async def my_orders(message: types.Message):
     orders = user_tasks.get(message.from_user.id)
 
     if not orders:
-        await message.answer("У вас нет заказов 😕")
+        await message.answer("У вас нет заказов")
         return
 
     text = "📋 Ваши заказы:\n\n"
