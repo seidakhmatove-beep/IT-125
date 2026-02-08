@@ -1,87 +1,59 @@
-
 import telebot
 from telebot import types
 import config
-from quiz import QuizGame
+from game_logic import RouletteGame
 
 bot = telebot.TeleBot(config.TOKEN)
-
-
 games = {}
 
 
 @bot.message_handler(commands=['start'])
-def start_game(message):
+def start_handler(message):
     user_id = message.chat.id
-
-    games[user_id] = QuizGame(user_id)
-
-    bot.send_message(user_id, "Привет! Начинаем викторину по Python из 15 вопросов. Поехали!")
-    send_question(user_id)
-
-
-def send_question(user_id):
-
-    game = games.get(user_id)
-
-    if not game or game.is_finished():
-
-        if game:
-            bot.send_message(user_id, game.get_results(), parse_mode='Markdown')
-            del games[user_id]
-        return
-
-    question_data = game.get_current_question()
-
+    games[user_id] = RouletteGame("Нурдин", "Сэф")
 
     markup = types.InlineKeyboardMarkup()
-    for idx, option in enumerate(question_data['options']):
+    markup.add(types.InlineKeyboardButton("🔫 Сделать выстрел!", callback_data="shoot"))
 
-        button = types.InlineKeyboardButton(text=option, callback_data=str(idx))
-        markup.add(button)
-
-
-    try:
-        bot.send_photo(
-            user_id,
-            question_data['img_url'],
-            caption=f"❓ Вопрос {game.current_question_index + 1}/15:\n\n**{question_data['text']}**",
-            reply_markup=markup,
-            parse_mode='Markdown'
-        )
-    except Exception as e:
-        bot.send_message(user_id, f"Ошибка загрузки картинки. Вопрос: {question_data['text']}", reply_markup=markup)
+    bot.send_message(
+        user_id,
+        f"Игра началась!\nИгроки: {games[user_id].players[0]} и {games[user_id].players[1]}\n\n"
+        f"Первым стреляет: {games[user_id].get_current_player()}\n"
+        f"⏳ У вас всего 5 секунд на выстрел!",
+        reply_markup=markup
+    )
 
 
 @bot.callback_query_handler(func=lambda call: True)
-def handle_answer(call):
+def callback_shoot(call):
     user_id = call.message.chat.id
     game = games.get(user_id)
 
-    if not game:
-        bot.answer_callback_query(call.id, "Игра не найдена. Напишите /start")
+    if not game or game.is_game_over:
+        bot.answer_callback_query(call.id, "Начните новую игру командой /start")
         return
 
+    result = game.pull_trigger()
+    msg_text = game.get_status_message(result)
 
-    selected_index = int(call.data)
+    if result == "survived":
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton(" Сделать выстрел!", callback_data="shoot"))
 
-
-    is_correct = game.check_answer(selected_index)
-
-
-    if is_correct:
-        bot.answer_callback_query(call.id, "✅ Верно!")
+        bot.edit_message_text(
+            chat_id=user_id,
+            message_id=call.message.message_id,
+            text=msg_text,
+            reply_markup=markup
+        )
     else:
-        bot.answer_callback_query(call.id, "❌ Ошибка!")
-
-
-    bot.edit_message_reply_markup(user_id, call.message.message_id, reply_markup=None)
-
-
-    game.next_question()
-    send_question(user_id)
+        bot.edit_message_text(
+            chat_id=user_id,
+            message_id=call.message.message_id,
+            text=msg_text
+        )
+        del games[user_id]
 
 
 if __name__ == '__main__':
-    print("Бот запущен...")
-    bot.infinity_polling()
+    bot.polling(none_stop=True)
