@@ -1,59 +1,99 @@
-import telebot
-from telebot import types
-import config
-from game_logic import RouletteGame
+import asyncio
+from aiogram import Bot, Dispatcher, types, F
+from aiogram.filters import Command
+from aiogram.fsm.state import State, StatesGroup
+from aiogram.fsm.context import FSMContext
+from database import Database
 
-bot = telebot.TeleBot(config.TOKEN)
-games = {}
+class RegSteps(StatesGroup):
+    full_name = State()
+    age = State()
+    group_code = State()
+    phone = State()
+    email = State()
+    tg_username = State()
+    hobby = State()
+    fav_subject = State()
+    hometown = State()
+    motivation = State()
 
-
-@bot.message_handler(commands=['start'])
-def start_handler(message):
-    user_id = message.chat.id
-    games[user_id] = RouletteGame("Нурдин", "Сэф")
-
-    markup = types.InlineKeyboardMarkup()
-    markup.add(types.InlineKeyboardButton("🔫 Сделать выстрел!", callback_data="shoot"))
-
-    bot.send_message(
-        user_id,
-        f"Игра началась!\nИгроки: {games[user_id].players[0]} и {games[user_id].players[1]}\n\n"
-        f"Первым стреляет: {games[user_id].get_current_player()}\n"
-        f"⏳ У вас всего 5 секунд на выстрел!",
-        reply_markup=markup
-    )
+bot = Bot(token="8578909579:AAEbELwF2V3gzXlQxIdtdJoRg860mnFVAmM")
+dp = Dispatcher()
+db = Database("university.db")
 
 
-@bot.callback_query_handler(func=lambda call: True)
-def callback_shoot(call):
-    user_id = call.message.chat.id
-    game = games.get(user_id)
+@dp.message(Command("start"))
+async def start_reg(message: types.Message, state: FSMContext):
+    await message.answer("Привет! Давай зарегистрируем тебя в базе одногруппников.\nВведите ФИО:")
+    await state.set_state(RegSteps.full_name)
 
-    if not game or game.is_game_over:
-        bot.answer_callback_query(call.id, "Начните новую игру командой /start")
-        return
+@dp.message(RegSteps.full_name)
+async def process_name(message: types.Message, state: FSMContext):
+    await state.update_data(full_name=message.text)
+    await message.answer("Сколько тебе лет?")
+    await state.set_state(RegSteps.age)
 
-    result = game.pull_trigger()
-    msg_text = game.get_status_message(result)
+@dp.message(RegSteps.age)
+async def process_age(message: types.Message, state: FSMContext):
+    await state.update_data(age=message.text)
+    await message.answer("Твой номер группы?")
+    await state.set_state(RegSteps.group_code)
 
-    if result == "survived":
-        markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton(" Сделать выстрел!", callback_data="shoot"))
+@dp.message(RegSteps.group_code)
+async def process_group(message: types.Message, state: FSMContext):
+    await state.update_data(group_code=message.text)
+    await message.answer("Твой номер телефона?")
+    await state.set_state(RegSteps.phone)
 
-        bot.edit_message_text(
-            chat_id=user_id,
-            message_id=call.message.message_id,
-            text=msg_text,
-            reply_markup=markup
-        )
-    else:
-        bot.edit_message_text(
-            chat_id=user_id,
-            message_id=call.message.message_id,
-            text=msg_text
-        )
-        del games[user_id]
+@dp.message(RegSteps.phone)
+async def process_phone(message: types.Message, state: FSMContext):
+    await state.update_data(phone=message.text)
+    await message.answer("Твой Email?")
+    await state.set_state(RegSteps.email)
 
+@dp.message(RegSteps.email)
+async def process_email(message: types.Message, state: FSMContext):
+    await state.update_data(email=message.text)
+    await message.answer("Твой ник в Telegram (через @)?")
+    await state.set_state(RegSteps.tg_username)
 
-if __name__ == '__main__':
-    bot.polling(none_stop=True)
+@dp.message(RegSteps.tg_username)
+async def process_tg(message: types.Message, state: FSMContext):
+    await state.update_data(tg_username=message.text)
+    await message.answer("Твоё хобби?")
+    await state.set_state(RegSteps.hobby)
+
+@dp.message(RegSteps.hobby)
+async def process_hobby(message: types.Message, state: FSMContext):
+    await state.update_data(hobby=message.text)
+    await message.answer("Любимый предмет?")
+    await state.set_state(RegSteps.fav_subject)
+
+@dp.message(RegSteps.fav_subject)
+async def process_subject(message: types.Message, state: FSMContext):
+    await state.update_data(fav_subject=message.text)
+    await message.answer("Из какого ты города?")
+    await state.set_state(RegSteps.hometown)
+
+@dp.message(RegSteps.hometown)
+async def process_city(message: types.Message, state: FSMContext):
+    await state.update_data(hometown=message.text)
+    await message.answer("Почему ты выбрал это направление обучения?")
+    await state.set_state(RegSteps.motivation)
+
+@dp.message(RegSteps.motivation)
+async def finish_reg(message: types.Message, state: FSMContext):
+    await state.update_data(motivation=message.text)
+
+    user_data = await state.get_data()
+
+    db.add_classmate(message.from_user.id, user_data)
+
+    await message.answer("Регистрация завершена! Твои данные сохранены в SQLite.")
+    await state.clear()
+
+async def main():
+    await dp.start_polling(bot)
+
+if __name__ == "__main__":
+    asyncio.run(main())
