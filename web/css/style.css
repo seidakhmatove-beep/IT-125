@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Добавил для более предсказуемых отступов */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 14px;
+    background-color: #000000;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+     max-width: 100%;
+}
+
+.wrapper {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%,rgba(26,14,1,1) 100%);
+    width: 100%;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 50px 0;
+}
+
+header .logo {
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+header nav {
+    float:right;
+    width: 50%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    position: relative;
+    align-items: center; /* Выровнял элементы по центру */
+}
+
+header nav ul li {
+     display: inline-block;
+}
+
+header nav ul li a {
+    color: white;
+}
+
+header nav ul li.active::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: #DC7000;
+    border-radius: 10px;
+    position: relative;
+    top: 10px;
+    left: -15px;
+}
+
+header nav ul li:not(.active):not(.btn) a:hover {
+    border-bottom: 5px solid #DC7000;
+    padding-bottom: 5px; /* Чтобы текст не прыгал при наведении */
+}
+
+header nav ul li.btn a {
+    background: #FA9021;
+    padding: 9px 17px;
+    border-radius: 5px;
+    transition: all 500ms ease;
+}
+
+header nav ul li.btn a:hover {
+    background: #a02604;
+}
+
+.hero {
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero--info {
+    width: 500px;
+    padding-top: 70px;
+}
+
+.hero--info h2 {
+    color: #E87D0E;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hero--info h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.hero--info p {
+   font-weight: 500;
+   line-height: 170%;
+   margin: 30px 0;
+}
+
+.hero--info .btn {
+    background: #FA8305;
+    color: white;
+    border-radius: 50px;
+    padding: 15px 30px;
+    border: 0;
+    transition: all 500ms ease;
+    font-size: 16px;
+}
+
+.hero--info .btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.hero img {
+    position: absolute;
+    top: -150px;
+    right: 0;
+    left: 470px;
+    width: 70%;
+}
+
+/*games*/
+.trending {
+    padding-top: 100px;
+}
+
+.trending h3 {
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.trending .see-all, .projects .see-all {
+    color: white;
+    background: #25211D;
+    border-radius: 5px;
+    padding: 10px 20px;
+    float: right;
+    display: block;
+    transition: all 500ms ease;
+}
+
+.trending .see-all:hover, .projects .see-all:hover {
+    transform: scale(1.1);
+}
+
+.trending .games {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 0;
+}
+
+.trending .games span {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.trending .games span img {
+    position: relative;
+    top: 5px;
+    margin-right: 7px;
+}
+
+.big-text {
+    padding: 50px 0;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.banner {
+    padding: 80px 0;
+}
+
+.banner h3 {
+     font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.banner p {
+    line-height: 170%;
+    margin-bottom: 30px;
+    width: 550px;
+}
+
+.banner img {
+    width: 100%;
+    margin-bottom: 30px ;
+}
+
+.features {
+    background: url("/img/rectan2.png") no-repeat center center fixed;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.features h3,
+.features p {
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features h3 {
+    font-size: 30px;
+}
+
+.features .info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.features .info .block {
+    text-align: center;
+    width: 20%;
+    margin: 30px 2%;
+}
+
+.features .info .block img {
+    margin-bottom: 15px;
+}
+
+.projects {
+    padding: 100px 0;
+}
+
+.projects h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.projects p {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.projects .images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.projects .see-all {
+    float: none;
+    width: 60px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.subscribe {
+    background: #1C140F;
+    border-radius: 15px;
+    padding: 50px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.subscribe-text {
+    width: 45%;
+}
+
+.subscribe-text h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.subscribe-text p {
+    line-height: 170%;
+}
+
+.subscribe-form {
+    width: 45%;
+}
+
+.input-wrapper {
+    display: flex;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 8px;
+    justify-content: space-between;
+}
+
+.input-wrapper input {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.input-wrapper .btn {
+    background: #DC7000;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 400ms ease;
+}
+
+.input-wrapper .btn:hover {
+    background: #a02604;
+}
+
+footer {
+    padding-top: 50px;
+    background-color: #000000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col {
+    width: 30%;
+}
+
+.footer-col.brand .logo {
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer-col.brand p {
+    line-height: 170%;
+    margin-bottom: 20px;
+}
+
+.socials a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 15px;
+    font-weight: 600;
+    transition: all 400ms ease;
+}
+
+.socials a:hover {
+    background: #DC7000;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.footer-col.links ul {
+    list-style: none;
+}
+
+.footer-col.links ul li {
+    margin-bottom: 15px;
+}
+
+.footer-col.links ul li a {
+    color: #ffffff;
+    transition: all 300ms ease;
+}
+
+.footer-col.links ul li a:hover {
+    color: #DC7000;
+}
+
+.footer-col.contact p {
+    line-height: 170%;
+    margin-bottom: 15px;
+}
+
+.footer-col.contact .phone {
+    color: #DC7000;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.about-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 0 120px 0;
+}
+
+.about-info {
+    width: 45%;
+}
+
+.breadcrumbs {
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #ffffff;
+    display: flex;
+    gap: 10px;
+}
+
+.breadcrumbs a {
+    color: #ffffff;
+    transition: color 300ms ease;
+}
+
+.breadcrumbs a:hover {
+    color: #DC7000;
+}
+
+.breadcrumbs span {
+    color: #DC7000;
+}
+
+.about-info h1 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.about-info p {
+    font-size: 16px;
+    line-height: 170%;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+}
+
+.btn-touch {
+    background: #FA8305;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 400ms ease;
+}
+
+.btn-touch:hover {
+    background: #a02604;
+    transform: scale(1.05);
+}
+
+.about-image {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================= */
+/* НОВЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ PORTFOLIO        */
+/* ========================================= */
+
+.hero.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0 30px 0;
+}
+
+.hero.services .hero--info {
+    width: 800px; /* Делаем текст шире, чем на главной */
+    padding-top: 0;
+}
+
+.hero.services .breadcrumbs {
+    justify-content: center; /* Центрируем крошки */
+}
+
+.hero.services h1 {
+    font-size: 36px;
+}
+
+/* Статистика (3 блока) */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 0 100px 0;
+}
+
+.stat-block {
+    background: #1C140F; /* Цвет как у блока подписки */
+    padding: 30px 40px;
+    border-radius: 15px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 300ms ease;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+}
+
+.stat-block:hover {
+    transform: translateY(-5px); /* Легкий прыжок при наведении */
+}
+
+.icon-wrapper.orange-circle {
+    background: #FA8305;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.icon-wrapper img {
+    width: 25px;
+    height: 25px;
+}
+
+.stat-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-details .number {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.stat-details .label {
+    color: #DC7000;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Блок с Видео */
+.video-features {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 120px;
+    gap: 50px;
+}
+
+.video-section {
+    width: 50%;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.video-placeholder {
+    width: 100%;
+    display: block;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px); /* Эффект размытия заднего фона */
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.play-button:hover {
+    background: #FA8305;
+    border-color: #FA8305;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button .triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 0 12px 20px;
+    border-color: transparent transparent transparent #ffffff;
+    margin-left: 5px; /* Визуально центрируем треугольник */
+}
+
+.text-section {
+    width: 45%;
+}
+
+.text-section h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.text-section p {
+    font-size: 16px;
+    line-height: 170%;
+    color: #e0e0e0;
+    margin-bottom: 35px;
+}
+
+/* Список с галочками */
+.features-list {
+    list-style: none;
+}
+
+.features-list li {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+/* Кружок под галочкой */
+.features-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: #25211D;
+    border-radius: 50%;
+}
+
+/* Сама оранжевая галочка через псевдоэлемент (CSS) */
+.features-list li::after {
+    content: '✔';
+    position: absolute;
+    left: 6px;
+    color: #FA8305;
+    font-size: 14px;
+}
