@@ -217,7 +217,6 @@ header nav ul li.btn a:hover {
 }
 
 .features {
-    background: url("/img/rectan2.png") no-repeat center center fixed;
     background-size: cover;
     padding: 80px 0;
 }
@@ -245,6 +244,13 @@ header nav ul li.btn a:hover {
     text-align: center;
     width: 20%;
     margin: 30px 2%;
+    transition: transform 300ms ease; 
+    cursor: pointer; 
+}
+
+
+.features .info .block:hover {
+    transform: scale(1.1); 
 }
 
 .features .info .block img {
@@ -504,9 +510,6 @@ footer {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* ========================================= */
-/* НОВЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ PORTFOLIO        */
-/* ========================================= */
 
 .hero.services {
     display: flex;
@@ -517,19 +520,18 @@ footer {
 }
 
 .hero.services .hero--info {
-    width: 800px; /* Делаем текст шире, чем на главной */
+    width: 800px; 
     padding-top: 0;
 }
 
 .hero.services .breadcrumbs {
-    justify-content: center; /* Центрируем крошки */
+    justify-content: center; 
 }
 
 .hero.services h1 {
     font-size: 36px;
 }
 
-/* Статистика (3 блока) */
 .stats {
     display: flex;
     justify-content: space-between;
@@ -538,7 +540,7 @@ footer {
 }
 
 .stat-block {
-    background: #1C140F; /* Цвет как у блока подписки */
+    background: #1C140F;
     padding: 30px 40px;
     border-radius: 15px;
     flex: 1;
