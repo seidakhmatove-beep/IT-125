@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Game</title>
+    <link rel="icon" type="image/png" href="img/check1.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -15,8 +17,9 @@
                 <ul>
                     <li class="active"><a href="index.html">Главная</a></li>
                     <li><a href="about.html">О нас</a></li>
-                    <li><a href="portfolio.html">Портофолио</a></li> <li><a href="#">Новости</a></li>
-                    <li class="btn"><a href="#">Контакты</a></li>
+                    <li><a href="portfolio.html">Портофолио</a></li> 
+                    <li><a href="news.html">Новости</a></li> 
+                    <li class="btn"><a href="login.html">Войти</a></li>
                 </ul>
             </nav>
         </header>
@@ -24,70 +27,107 @@
         <div class="hero container">
             <div class="hero--info">
                 <h2>3D game Dev</h2>
-                <h1>Work that we produce for our clients</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-                <button class="btn">Get more details</button>
+                <h1>Добро пожаловать на нашу платформу</h1>
+                <p>Вы здесь можете найти любую игру и насладится прохождением игры</p>
+                <button class="btn">Получить более подробную информацию</button>
             </div>
             <img src="img/joystick.svg" alt="Joystick">
         </div>
 
         <div class="container trending">
-            <a href="#" class="see-all">SEE ALL</a>
-            <h3>Currently Trending Games</h3>
+            <a href="#" class="see-all">Все</a>
+            <h3>Лучшие современные игры</h3>
 
             <div class="games">
                 <div class="block">
                     <img src="/img/game1.svg" alt="Game 1">
-                    <span><img src="/img/fire.svg" alt="Fire">40 Followers</span>
+                    <span><img src="/img/fire.svg" alt="Fire">1000+ Игроков</span>
                 </div>
                 <div class="block">
                     <img src="/img/game2.svg" alt="Game 2">
-                    <span><img src="/img/fire.svg" alt="Fire">40 Followers</span>
+                    <span><img src="/img/fire.svg" alt="Fire">1000+ Игроков</span>
                 </div>
                 <div class="block">
                     <img src="/img/game3.svg" alt="Game 3">
-                    <span><img src="/img/fire.svg" alt="Fire">40 Followers</span>
+                    <span><img src="/img/fire.svg" alt="Fire">1000+ Игроков</span>
                 </div>
                 <div class="block">
                     <img src="/img/game4.svg" alt="Game 4">
-                    <span><img src="/img/fire.svg" alt="Fire">40 Followers</span>
+                    <span><img src="/img/fire.svg" alt="Fire">1000+ Игроков</span>
                 </div>
             </div>
         </div>
 
         <div class="container big-text">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <p>Приятного времяпрепровождения.</p>
         </div>
 
         <div class="container banner">
-            <h3>Lorem Ipsum</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-            <img src="img/jump.svg" alt="Jump">
+            <h3>Любой жанр игр</h3>
+            <p>Играйте в любые игры</p>
+            
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/Edition1.jpg" alt="Minecraft">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/Edition2.jpg" alt="Fortnait">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/Edition3.jpg" alt="Volorant">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/Edition4.jpg" alt="Genshin">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/Edition5.jpg" alt="GTA-5">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/Edition6.jpg" alt="Far Cry-6">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/Edition7.jpg" alt="Spider-man">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/Edition8.jpg" alt="Forza Horizon-5">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/Edition9.jpg" alt="Resident Evil-4">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/Edition10.jpg" alt="Metro-Exodus">
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+
         </div>
 
         <div class="features">
             <div class="container">
-                <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <h3>Наша платформа доступно абсалютно в любом устройстве</h3>
                 <div class="info">
                     <div class="block">
                         <img src="img/feture1.svg" alt="">
-                        <p>Mobile Game Development</p>
+                        <p>Mobile Game</p>
                         <img src="img/arrow%201.svg" alt="">
                     </div>
                     <div class="block">
                         <img src="img/feture2.svg" alt="">
-                        <p>PC Game Development</p>
+                        <p>PC Game</p>
                         <img src="img/arrow%202.svg" alt="">
                     </div>
                     <div class="block">
                         <img src="img/feture3.svg" alt="">
-                        <p>PS4 Game Development</p>
+                        <p>PS4 Game</p>
                         <img src="img/arrow%203.svg" alt="">
                     </div>
                     <div class="block">
                         <img src="img/feture4.svg" alt="">
-                        <p>AR/VR Solutions</p>
+                        <p>AR/VR</p>
                         <img src="img/arrow%204.svg" alt="">
                     </div>
                     <div class="block">
@@ -107,8 +147,7 @@
 
     <div class="wrapper">
         <div class="container projects">
-            <h3>Our Recent Projects</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+            <h3>Наши последние проекты</h3>
             <div class="images">
                 <img src="/img/pain.png" alt="">
                 <img src="/img/pain1.png" alt="">
@@ -119,20 +158,7 @@
                 <img src="/img/pain4.png" alt="">
                 <img src="/img/pain5.png" alt="">
             </div>
-            <a href="" class="see-all">SEE-ALL</a>
-        </div>
-    </div>
-
-    <div class="container subscribe">
-        <div class="subscribe-text">
-            <h3>Lorem Ipsum</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="subscribe-form">
-            <div class="input-wrapper">
-                <input type="email" placeholder="Enter email address">
-                <button class="btn">Continue</button>
-            </div>
+            <a href="" class="see-all">Все</a>
         </div>
     </div>
 
@@ -140,7 +166,7 @@
         <div class="container footer-content">
             <div class="footer-col brand">
                 <span class="logo">LOGO</span>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <p>Наши Соц Сети</p>
                 <div class="socials">
                     <a href="#">Fb</a>
                     <a href="#">Ig</a>
@@ -150,26 +176,46 @@
             </div>
 
             <div class="footer-col links">
-                <h4>About us</h4>
                 <ul>
-                    <li><a href="#">Zeux</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li> <li><a href="#">Careers</a></li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="about.html">О нас</a></li> 
+                    <li><a href="portfolio.html">Портофолио</a></li> 
+                    <li><a href="news.html">Новости</a></li>
                 </ul>
             </div>
 
             <div class="footer-col contact">
-                <h4>Contact us</h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <p>Так же вы с нами можете связаться через телефон</p>
                 <p class="phone">+996 505 422 605</p>
             </div>
         </div>
 
         <div class="footer-bottom">
             <div class="container">
-                <p>Copyright ® 2021 Lorem All rights Reserved</p>
+                <p>Copyright ® 2021 LOGO All rights Reserved</p>
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3, /* ПОКАЗЫВАТЬ ПО 3 КАРТИНКИ В РЯД */
+            spaceBetween: 20, /* Небольшое расстояние между ними */
+            grabCursor: true, 
+            autoplay: {
+                delay: 3500, 
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 </body>
 </html>
