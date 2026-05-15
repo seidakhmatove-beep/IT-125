@@ -280,8 +280,14 @@ header nav ul li.btn a:hover {
 }
 
 .projects .images img {
-    transition: transform 400ms ease; 
-    cursor: pointer; 
+    filter: grayscale(100%) brightness(60%);
+    transition: filter 0.4s ease, transform 0.4s ease; 
+    cursor: pointer;
+}
+
+.projects .images img:hover {
+    filter: grayscale(0%) brightness(100%);
+    transform: scale(1.05); 
 }
 
 .projects .images img:hover {
@@ -837,4 +843,32 @@ footer {
 .login-card .btn-login:hover {
     background-color: #a02604;
     transform: scale(1.02);
+}
+
+.games .block {
+    position: relative; 
+    overflow: hidden;   
+
+.games .block::after {
+    content: "Играть!"; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    color: #ff8c00; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+    pointer-events: none; 
+}
+
+.games .block:hover::after {
+    opacity: 1; 
+}
 }
