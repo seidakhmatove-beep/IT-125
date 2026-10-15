@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Подать объявление — FreeMarket</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="index.html">Free<span>Market</span></a>
+  <nav class="main-nav" data-main-nav>
+    <a href="catalog.html">Каталог</a><a href="category-auto.html">Авто</a><a href="safety.html">Безопасность</a><a href="faq.html">Помощь</a>
+  </nav>
+  <div class="header-actions">
+    <a class="button button-light" href="favorites.html">♡ Избранное</a>
+    <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</div></header>
+
+<main class="container">
+  <div class="page-title">
+    <p><a href="index.html">Главная</a> / Новое объявление</p>
+    <h1>Подать объявление</h1>
+    <p>Заполните информацию, чтобы покупателям было проще найти ваш товар.</p>
+  </div>
+
+  <form class="panel form-card" data-ad-form>
+    <div class="form-grid">
+      <div class="field full">
+        <label for="title">Название объявления *</label>
+        <input id="title" name="title" required maxlength="80" placeholder="Например, велосипед в отличном состоянии">
+      </div>
+
+      <div class="field">
+        <label for="category">Категория *</label>
+        <select id="category" name="category" required>
+          <option value="">Выберите категорию</option>
+          <option>Авто</option><option>Недвижимость</option><option>Электроника</option>
+          <option>Для дома</option><option>Одежда и аксессуары</option><option>Хобби и спорт</option><option>Другое</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="price">Цена, сом *</label>
+        <input id="price" name="price" type="number" min="0" required placeholder="0">
+      </div>
+
+      <div class="field full">
+        <label for="description">Описание *</label>
+        <textarea id="description" name="description" required maxlength="3000" placeholder="Расскажите о состоянии, характеристиках и условиях продажи"></textarea>
+      </div>
+
+      <div class="field full">
+        <label for="photos">Фотографии</label>
+        <div class="upload-box">
+          <input id="photos" name="photos" type="file" accept="image/*" multiple>
+          <p class="form-note">Добавьте до 10 фотографий в формате JPG или PNG.</p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="city">Город *</label>
+        <select id="city" name="city" required>
+          <option value="">Выберите город</option>
+          <option>Бишкек</option><option>Ош</option><option>Каракол</option><option>Джалал-Абад</option><option>Другой</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="phone">Телефон для связи *</label>
+        <input id="phone" name="phone" type="tel" required placeholder="+996 ___ ___ ___">
+      </div>
+
+      <div class="field full">
+        <button class="button" type="submit">Опубликовать объявление</button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь с правилами сервиса. Сейчас форма работает в демонстрационном режиме.</p>
+        <p class="form-note" data-form-status role="status"></p>
+      </div>
+    </div>
+  </form>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <a class="logo" href="index.html">Free<span>Market</span></a>
+  <div class="footer-links">
+    <a href="safety.html">Безопасность</a><a href="faq.html">Помощь</a><a href="contacts.html">Контакты</a>
+  </div>
+  <small>© 2025 FreeMarket</small>
+</div></footer>
+</body>
+</html>
+
+
+
+
+

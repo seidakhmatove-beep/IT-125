@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Авто — FreeMarket</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="index.html">Free<span>Market</span></a>
+  <nav class="main-nav" data-main-nav>
+    <a href="catalog.html">Каталог</a><a href="category-auto.html">Авто</a><a href="safety.html">Безопасность</a><a href="faq.html">Помощь</a>
+  </nav>
+  <div class="header-actions">
+    <a class="button button-light" href="favorites.html">♡ Избранное</a>
+    <a class="button" href="add-ad.html">＋ Подать объявление</a>
+    <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</div></header>
+
+<main class="container">
+  <div class="page-title">
+    <p><a href="index.html">Главная</a> / Категории / Авто</p>
+    <h1>Автомобили</h1>
+    <p>Найдите автомобиль по цене, году выпуска и пробегу.</p>
+  </div>
+
+  <div class="field catalog-search"><label for="auto-search">Поиск по модели</label><input id="auto-search" data-catalog-search type="search" placeholder="Например, Hyundai Sonata"></div>
+<div class="catalog-layout">
+    <aside class="panel">
+      <h2>Фильтры авто</h2>
+      <form data-filter-form>
+        <div class="field"><label>Цена от, сом</label><input type="number" name="min-price" min="0" placeholder="0"></div>
+        <div class="field" style="margin-top:12px"><label>Цена до, сом</label><input type="number" name="max-price" min="0" placeholder="Без ограничений"></div>
+        <div class="field" style="margin-top:12px"><label>Год от</label><input type="number" name="min-year" min="1980" max="2026" placeholder="2015"></div>
+        <div class="field" style="margin-top:12px"><label>Пробег до, км</label><input type="number" name="max-mileage" min="0" placeholder="100 000"></div>
+        <div class="field" style="margin-top:12px">
+          <label>Город</label>
+          <select name="city">
+            <option value="">Любой</option><option>Бишкек</option><option>Ош</option>
+          </select>
+        </div>
+      </form>
+    </aside>
+
+    <section><div class="product-grid">
+
+      <article class="product-card" data-catalog-card data-price="1450000" data-year="2019" data-mileage="68000" data-city="Бишкек">
+        <a href="item.html"><img class="product-image" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="Hyundai Sonata"></a>
+        <button class="favorite-button" data-favorite="auto-sonata">♡</button>
+        <div class="product-body">
+          <a class="product-title" href="item.html">Hyundai Sonata, 2019</a>
+          <div class="product-price">1 450 000 сом</div>
+          <div class="product-meta"><span>68 000 км · Бишкек</span><span>Сегодня</span></div>
+        </div>
+      </article>
+
+      <article class="product-card" data-catalog-card data-price="980000" data-year="2016" data-mileage="102000" data-city="Ош">
+        <a href="item.html"><img class="product-image" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80" alt="Седан"></a>
+        <button class="favorite-button" data-favorite="auto-sedan">♡</button>
+        <div class="product-body">
+          <a class="product-title" href="item.html">Седан, хорошее состояние</a>
+          <div class="product-price">980 000 сом</div>
+          <div class="product-meta"><span>102 000 км · Ош</span><span>Вчера</span></div>
+        </div>
+      </article>
+
+    </div></section>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <a class="logo" href="index.html">Free<span>Market</span></a>
+  <a href="safety.html">Советы по безопасной сделке</a>
+</div></footer>
+
+</body>
+</html>
+
+
+
+

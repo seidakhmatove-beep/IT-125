@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Избранное — FreeMarket</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="index.html">Free<span>Market</span></a>
+  <nav class="main-nav" data-main-nav>
+    <a href="catalog.html">Каталог</a><a href="category-auto.html">Авто</a><a href="safety.html">Безопасность</a><a href="faq.html">Помощь</a>
+  </nav>
+  <div class="header-actions">
+    <a class="button" href="add-ad.html">＋ Подать объявление</a>
+    <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</div></header>
+
+<main class="container">
+  <div class="page-title">
+    <p><a href="index.html">Главная</a> / Избранное</p>
+    <h1>Избранные объявления</h1>
+    <p>Сохранённые предложения доступны в этом браузере.</p>
+  </div>
+
+  <div class="product-grid" data-favorites-list></div>
+
+  <!-- Скрытый шаблон карточек: JS клонирует их в [data-favorites-list] -->
+  <div class="hidden" aria-hidden="true">
+
+    <article class="product-card" data-product-id="vip-car">
+      <a href="item.html"><img class="product-image" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="Автомобиль"></a>
+      <button class="favorite-button" data-favorite="vip-car">♡</button>
+      <div class="product-body">
+        <a class="product-title" href="item.html">Hyundai Sonata, отличное состояние</a>
+        <div class="product-price">1 450 000 сом</div>
+        <div class="product-meta"><span>Бишкек</span><span>Сегодня</span></div>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="vip-sofa">
+      <a href="item.html"><img class="product-image" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" alt="Диван"></a>
+      <button class="favorite-button" data-favorite="vip-sofa">♡</button>
+      <div class="product-body">
+        <a class="product-title" href="item.html">Угловой диван в отличном состоянии</a>
+        <div class="product-price">42 000 сом</div>
+        <div class="product-meta"><span>Бишкек</span><span>Сегодня</span></div>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="vip-phone">
+      <a href="item.html"><img class="product-image" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" alt="Смартфон"></a>
+      <button class="favorite-button" data-favorite="vip-phone">♡</button>
+      <div class="product-body">
+        <a class="product-title" href="item.html">iPhone 14 Pro, 256 ГБ</a>
+        <div class="product-price">58 000 сом</div>
+        <div class="product-meta"><span>Ош</span><span>Сегодня</span></div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <a class="logo" href="index.html">Free<span>Market</span></a>
+  <a href="catalog.html">Каталог</a>
+</div></footer>
+
+</body>
+</html>
+
+
+

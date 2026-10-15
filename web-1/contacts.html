@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Контакты — FreeMarket</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="index.html">Free<span>Market</span></a>
+  <nav class="main-nav" data-main-nav>
+    <a href="catalog.html">Каталог</a><a href="category-auto.html">Авто</a><a href="safety.html">Безопасность</a><a href="faq.html">Помощь</a>
+  </nav>
+  <div class="header-actions">
+    <a class="button" href="add-ad.html">＋ Подать объявление</a>
+    <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</div></header>
+
+<main class="container">
+  <div class="page-title">
+    <p><a href="index.html">Главная</a> / Контакты</p>
+    <h1>Связаться с поддержкой</h1>
+    <p>Опишите вопрос — мы постараемся помочь.</p>
+  </div>
+
+  <form class="panel form-card" data-contact-form>
+    <div class="form-grid">
+      <div class="field">
+        <label for="contact-name">Ваше имя *</label>
+        <input id="contact-name" required placeholder="Имя">
+      </div>
+      <div class="field">
+        <label for="contact-email">Электронная почта *</label>
+        <input id="contact-email" type="email" required placeholder="name@example.com">
+      </div>
+
+      <div class="field full">
+        <label for="contact-topic">Тема обращения</label>
+        <select id="contact-topic">
+          <option>Вопрос по объявлению</option><option>Сообщить о проблеме</option><option>Другое</option>
+        </select>
+      </div>
+
+      <div class="field full">
+        <label for="contact-message">Сообщение *</label>
+        <textarea id="contact-message" required placeholder="Чем мы можем помочь?"></textarea>
+      </div>
+
+      <div class="field full">
+        <button class="button">Отправить сообщение</button>
+        <p class="form-note" data-form-status role="status"></p>
+      </div>
+    </div>
+  </form>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <a class="logo" href="index.html">Free<span>Market</span></a>
+  <div class="footer-links">
+    <a href="faq.html">Вопросы и ответы</a><a href="safety.html">Безопасность</a>
+  </div>
+</div></footer>
+
+</body>
+</html>
+
+
+
+

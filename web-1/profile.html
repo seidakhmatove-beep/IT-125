@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Мой кабинет — FreeMarket</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header"><div class="container header-inner">
+  <a class="logo" href="index.html">Free<span>Market</span></a>
+  <nav class="main-nav" data-main-nav>
+    <a href="catalog.html">Каталог</a><a href="category-auto.html">Авто</a><a href="safety.html">Безопасность</a><a href="faq.html">Помощь</a>
+  </nav>
+  <div class="header-actions">
+    <a class="button" href="add-ad.html">＋ Подать объявление</a>
+    <button class="menu-toggle" data-menu-toggle aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</div></header>
+
+<main class="container">
+  <div class="page-title">
+    <p><a href="index.html">Главная</a> / Кабинет</p>
+    <h1>Мой кабинет</h1>
+    <p>Управляйте объявлениями и контактными данными.</p>
+  </div>
+
+  <div class="detail-layout">
+
+    <!-- МОИ ОБЪЯВЛЕНИЯ -->
+    <section class="panel">
+      <div class="section-heading">
+        <h2>Мои объявления</h2>
+        <a class="button" href="add-ad.html">＋ Новое</a>
+      </div>
+
+      <div class="product-grid" data-my-ads>
+        <article class="product-card">
+          <a href="item.html"><img class="product-image" src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="Автомобиль"></a>
+          <div class="product-body">
+            <a class="product-title" href="item.html">Hyundai Sonata, 2019</a>
+            <div class="product-price">1 450 000 сом</div>
+            <div class="product-meta"><span>Активно</span><span>Просмотров: 128</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- НАСТРОЙКИ ПРОФИЛЯ -->
+    <form class="panel" data-profile-form>
+      <h2>Настройки профиля</h2>
+
+      <div class="field">
+        <label for="profile-name">Имя</label>
+        <input id="profile-name" name="name" value="Азамат К.">
+      </div>
+
+      <div class="field" style="margin-top:14px">
+        <label for="profile-phone">Телефон</label>
+        <input id="profile-phone" name="phone" type="tel" value="+996 555 123 456">
+      </div>
+
+      <div class="field" style="margin-top:14px">
+        <label for="profile-city">Город</label>
+        <select id="profile-city" name="city">
+          <option>Бишкек</option><option>Ош</option>
+        </select>
+      </div>
+
+      <button class="button" style="margin-top:18px">Сохранить настройки</button>
+      <p class="form-note" data-form-status role="status"></p>
+    </form>
+
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container footer-inner">
+  <a class="logo" href="index.html">Free<span>Market</span></a>
+  <a href="favorites.html">Избранное</a>
+</div></footer>
+
+</body>
+</html>
+
+
+
+
