@@ -1,2 +1,88 @@
-<!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Аккаунт — LOGO</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/pages.css"></head><body><header class="container page-header"><a class="logo" href="index.html">LOGO</a><nav><a href="index.html">Главная</a><a href="games.html">Игры</a><a href="subscriptions.html">Подписка</a><a href="devices.html">Устройства</a><a href="support.html">Поддержка</a><a class="page-cta selected" href="profile.html">Аккаунт</a></nav></header><main class="container"><section class="page-hero"><span class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</span><h1>Твоя игровая<br><em>зона.</em></h1><p>Сохраняй любимые игры и следи за планом подписки в одном месте.</p><a class="action" href="login.html">Войти в аккаунт →</a></section><section class="page-section"><div class="section-heading"><div><span class="eyebrow">ВОЗМОЖНОСТИ</span><h2>Всё готово к старту</h2></div></div><div class="profile-grid"><article class="device-card"><div class="device-icon">01</div><h3>Любимые игры</h3><p>Собери список игр, к которым хочется возвращаться.</p><a href="games.html">Перейти в каталог →</a></article><article class="device-card"><div class="device-icon">02</div><h3>Твой план</h3><p>Выбери комфортный уровень доступа и узнай, что входит в каждый план.</p><a href="subscriptions.html">Сравнить планы →</a></article><article class="device-card"><div class="device-icon">03</div><h3>Настройка устройств</h3><p>Узнай, как играть на компьютере, смартфоне, планшете или телевизоре.</p><a href="devices.html">Совместимость →</a></article></div></section><section class="callout"><h2>Впервые на LOGO?</h2><p>Создай аккаунт, чтобы подготовить свою игровую библиотеку.</p><a class="action" href="login.html">Перейти ко входу →</a></section></main><footer class="container page-footer"><span>LOGO · Играй где угодно</span><span><a href="support.html">Помощь</a>　·　<a href="about.html">О нас</a></span></footer></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аккаунт — LOGO</title>
+
+  <!-- Предзагрузка критических стилей -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Шапка сайта -->
+  <header class="container page-header">
+    <a class="logo" href="index.html" aria-label="LOGO Главная">LOGO</a>
+    <nav aria-label="Основная навигация">
+      <a href="index.html">Главная</a>
+      <a href="games.html">Игры</a>
+      <a href="subscriptions.html">Подписка</a>
+      <a href="devices.html">Устройства</a>
+      <a href="support.html">Поддержка</a>
+      <a class="page-cta selected" href="profile.html" aria-current="page">Аккаунт</a>
+    </nav>
+  </header>
+
+  <!-- Основной контент -->
+  <main class="container">
+    <!-- Hero section -->
+    <section class="page-hero">
+      <span class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</span>
+      <h1>Твоя игровая<br><em>зона.</em></h1>
+      <p>Сохраняй любимые игры и следи за планом подписки в одном месте.</p>
+      <a class="action" href="login.html">Войти в аккаунт &rarr;</a>
+    </section>
+
+    <!-- Раздел возможностей -->
+    <section class="page-section" aria-labelledby="features-title">
+      <div class="section-heading">
+        <span class="eyebrow">ВОЗМОЖНОСТИ</span>
+        <h2 id="features-title">Всё готово к старту</h2>
+      </div>
+
+      <div class="profile-grid">
+        <article class="device-card">
+          <span class="device-icon" aria-hidden="true">01</span>
+          <h3>Любимые игры</h3>
+          <p>Собери список игр, к которым хочется возвращаться.</p>
+          <a href="games.html" aria-label="Перейти в каталог любимых игр">Перейти в каталог &rarr;</a>
+        </article>
+
+        <article class="device-card">
+          <span class="device-icon" aria-hidden="true">02</span>
+          <h3>Твой план</h3>
+          <p>Выбери комфортный уровень доступа и узнай, что входит в каждый план.</p>
+          <a href="subscriptions.html" aria-label="Сравнить тарифные планы">Сравнить планы &rarr;</a>
+        </article>
+
+        <article class="device-card">
+          <span class="device-icon" aria-hidden="true">03</span>
+          <h3>Настройка устройств</h3>
+          <p>Узнай, как играть на компьютере, смартфоне, планшете или телевизоре.</p>
+          <a href="devices.html" aria-label="Проверить совместимость устройств">Совместимость &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Призыв к действию -->
+    <section class="callout" aria-labelledby="callout-title">
+      <h2 id="callout-title">Впервые на LOGO?</h2>
+      <p>Создай аккаунт, чтобы подготовить свою игровую библиотеку.</p>
+      <a class="action" href="login.html">Перейти ко входу &rarr;</a>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="container page-footer">
+    <span>LOGO &middot; Играй где угодно</span>
+    <nav class="footer-links" aria-label="Ссылки в подвале">
+      <a href="support.html">Помощь</a>
+      <span class="separator" aria-hidden="true">&middot;</span>
+      <a href="about.html">О нас</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
