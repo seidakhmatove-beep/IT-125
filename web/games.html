@@ -1,2 +1,43 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Каталог игр — LOGO</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/pages.css"></head><body><header class="container page-header"><a class="logo" href="index.html">LOGO</a><nav><a href="index.html">Главная</a><a class="selected" href="games.html">Игры</a><a href="subscriptions.html">Подписка</a><a href="devices.html">Устройства</a><a href="support.html">Поддержка</a><a class="page-cta" href="login.html">Войти</a></nav></header><main class="container"><section class="page-hero"><span class="eyebrow">БИБЛИОТЕКА</span><h1>Выбирай игру.<br><em>Запускай сразу.</em></h1><p>Подборка игр для разных настроений — от больших приключений до быстрых матчей.</p><a class="action" href="#catalog">Открыть каталог ↓</a></section><section id="catalog" class="page-section"><div class="section-heading"><div><span class="eyebrow">ПОПУЛЯРНОЕ</span><h2>Игры недели</h2></div><span>Подборка команды LOGO</span></div><div class="card-grid"><article class="game-card"><img src="img/Edition1.jpg" alt="Minecraft"><div><small>ПРИКЛЮЧЕНИЕ</small><h3>Minecraft</h3><p>Строй, исследуй и создавай собственный мир.</p><a href="login.html">Играть →</a></div></article><article class="game-card"><img src="img/Edition2.jpg" alt="Fortnite"><div><small>ЭКШЕН</small><h3>Fortnite</h3><p>Динамичные матчи и командные сражения.</p><a href="login.html">Играть →</a></div></article><article class="game-card"><img src="img/Edition3.jpg" alt="Valorant"><div><small>ШУТЕР</small><h3>Valorant</h3><p>Тактика, точность и работа в команде.</p><a href="login.html">Играть →</a></div></article><article class="game-card"><img src="img/Edition4.jpg" alt="Genshin Impact"><div><small>RPG</small><h3>Genshin Impact</h3><p>Большое путешествие по фантастическому миру.</p><a href="login.html">Играть →</a></div></article><article class="game-card"><img src="img/Edition5.jpg" alt="Grand Theft Auto V"><div><small>ОТКРЫТЫЙ МИР</small><h3>Grand Theft Auto V</h3><p>Исследуй город и выбирай собственный путь.</p><a href="login.html">Играть →</a></div></article><article class="game-card"><img src="img/Edition9.jpg" alt="Resident Evil 4"><div><small>ХОРРОР</small><h3>Resident Evil 4</h3><p>Напряжённое приключение для любителей испытаний.</p><a href="login.html">Играть →</a></div></article></div></section><section class="callout"><h2>Нашёл свою следующую игру?</h2><p>Войди в аккаунт и продолжай играть на любом устройстве.</p><a class="action" href="login.html">Войти в аккаунт →</a></section></main><footer class="container page-footer"><span>LOGO · Играй где угодно</span><span><a href="support.html">Помощь</a>　·　<a href="about.html">О нас</a></span></footer></body></html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Каталог игр — LOGO</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/games.css">
+  <script src="js/games.js" defer></script>
+</head>
+<body>
+  <header class="container page-header">
+    <a class="logo" href="index.html" aria-label="LOGO — главная">LOGO</a>
+    <nav aria-label="Основная навигация">
+      <a href="index.html">Главная</a><a class="selected" href="games.html" aria-current="page">Игры</a>
+      <a href="subscriptions.html">Подписка</a><a href="devices.html">Устройства</a>
+      <a href="support.html">Поддержка</a><a class="page-cta" href="login.html">Войти</a>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="page-hero">
+      <span class="eyebrow">БИБЛИОТЕКА</span>
+      <h1>Выбирай игру.<br><em>Запускай сразу.</em></h1>
+      <p>Каталог игр для облачного гейминга. Нажми «Подробнее», чтобы узнать жанр, платформы и описание игры.</p>
+      <a class="action" href="#catalog">Открыть каталог ↓</a>
+    </section>
+    <section id="catalog" class="page-section" aria-labelledby="catalog-title">
+      <div class="section-heading"><div><span class="eyebrow">КАТАЛОГ</span><h2 id="catalog-title">Игры в библиотеке</h2></div><span id="game-count" aria-live="polite">Загрузка списка…</span></div>
+      <div id="game-list" class="card-grid" aria-live="polite"></div>
+      <p id="load-error" class="fine-print" role="alert" hidden>Не удалось загрузить каталог. Откройте сайт через локальный сервер (например, Live Server).</p>
+    </section>
+    <section class="callout"><h2>Нашёл свою следующую игру?</h2><p>Войди в аккаунт и продолжай играть на любом устройстве.</p><a class="action" href="login.html">Войти в аккаунт →</a></section>
+  </main>
+  <footer class="container page-footer"><span>LOGO · Играй где угодно</span><nav class="footer-links" aria-label="Ссылки в подвале"><a href="support.html">Помощь</a><span class="separator" aria-hidden="true">·</span><a href="about.html">О нас</a></nav></footer>
+
+  <dialog class="game-dialog" id="game-dialog" aria-labelledby="detail-title">
+    <button class="dialog-close" type="button" aria-label="Закрыть окно">×</button>
+    <img class="dialog-image" id="detail-image" src="" alt="">
+    <div class="dialog-content"><span class="eyebrow" id="detail-genre"></span><h2 id="detail-title"></h2><p id="detail-description"></p><p class="detail-platforms"><strong>Платформы:</strong> <span id="detail-platforms"></span></p><a class="action" href="login.html">Играть →</a></div>
+  </dialog>
+</body>
+</html>
