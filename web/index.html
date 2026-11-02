@@ -8,6 +8,8 @@
     <link rel="icon" type="image/png" href="img/check1.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <script src="js/animation.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -33,6 +35,22 @@
             </div>
             <img src="img/joystick.svg" alt="Joystick">
         </div>
+
+        <section class="container animation-lab" aria-labelledby="animation-title">
+            <div class="animation-copy">
+                <span class="animation-eyebrow">ИНТЕРАКТИВНАЯ ДЕМОНСТРАЦИЯ</span>
+                <h2 id="animation-title">Почувствуй игру</h2>
+                <p>Наведи курсор, нажми на джойстик или активируй его клавишей Enter либо Пробел.</p>
+                <ul class="animation-events">
+                    <li><span>01</span> Наведение — покачивание</li>
+                    <li><span>02</span> Нажатие — вращение</li>
+                    <li><span>03</span> Клавиша — игровой импульс</li>
+                </ul>
+            </div>
+            <button class="animation-controller" id="animation-controller" type="button" aria-label="Запустить анимацию джойстика">
+                <img src="img/joystick.svg" alt="">
+            </button>
+        </section>
 
         <div class="container trending">
             <a href="#" class="see-all">Все</a>

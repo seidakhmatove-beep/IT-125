@@ -1,0 +1,135 @@
+.animation-lab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    min-height: 300px;
+    margin-bottom: 65px;
+    padding: 38px 52px;
+    overflow: hidden;
+    border: 1px solid #49301c;
+    border-radius: 12px;
+    background: radial-gradient(ellipse at 82% 50%, #35200f 0%, #17110c 38%, #100d0b 78%);
+}
+
+.animation-copy {
+    max-width: 570px;
+}
+
+.animation-eyebrow {
+    color: #fa9026;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.animation-copy h2 {
+    margin: 10px 0;
+    font-size: 32px;
+}
+
+.animation-copy p {
+    max-width: 480px;
+    color: #c4b8aa;
+    line-height: 1.7;
+}
+
+.animation-events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    color: #e4d8cb;
+    font-size: 12px;
+}
+
+.animation-events span {
+    margin-right: 5px;
+    color: #fa9026;
+    font-weight: 600;
+}
+
+.animation-controller {
+    display: grid;
+    flex: 0 0 190px;
+    width: 190px;
+    aspect-ratio: 1;
+    place-items: center;
+    padding: 22px;
+    border: 1px solid #75502f;
+    border-radius: 50%;
+    background: #21170f;
+    cursor: pointer;
+    transition: border-color 180ms ease, background 180ms ease;
+}
+
+.animation-controller img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.animation-controller:focus-visible {
+    outline: 3px solid #ffb15e;
+    outline-offset: 5px;
+}
+
+.animation-controller.is-hovering img {
+    animation: controller-wiggle 650ms ease-in-out infinite alternate;
+}
+
+.animation-controller.is-spinning img {
+    animation: controller-spin 700ms ease-in-out;
+}
+
+.animation-controller.is-launching img {
+    animation: controller-launch 550ms ease-out;
+}
+
+@keyframes controller-wiggle {
+    from { transform: rotate(-8deg) translateY(0); }
+    to { transform: rotate(8deg) translateY(-8px); }
+}
+
+@keyframes controller-spin {
+    from { transform: rotate(0) scale(1); }
+    to { transform: rotate(360deg) scale(1.08); }
+}
+
+@keyframes controller-launch {
+    0% { transform: scale(1); filter: brightness(1); }
+    45% { transform: scale(1.25); filter: brightness(1.5); }
+    100% { transform: scale(1); filter: brightness(1); }
+}
+
+@media (max-width: 700px) {
+    .animation-lab {
+        min-height: 0;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 28px 24px;
+    }
+
+    .animation-controller {
+        align-self: center;
+        flex-basis: 150px;
+        width: 150px;
+    }
+
+    .animation-events {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animation-controller.is-hovering img,
+    .animation-controller.is-spinning img,
+    .animation-controller.is-launching img {
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+    }
+}
