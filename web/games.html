@@ -27,6 +27,7 @@
     </section>
     <section id="catalog" class="page-section" aria-labelledby="catalog-title">
       <div class="section-heading"><div><span class="eyebrow">КАТАЛОГ</span><h2 id="catalog-title">Игры в библиотеке</h2></div><span id="game-count" aria-live="polite">Загрузка списка…</span></div>
+      <div class="catalog-toolbar"><p>Управление содержимым каталога</p><button class="action" id="add-game" type="button">Добавить игру +</button></div>
       <div id="game-list" class="card-grid" aria-live="polite"></div>
       <p id="load-error" class="fine-print" role="alert" hidden>Не удалось загрузить каталог. Откройте сайт через локальный сервер (например, Live Server).</p>
     </section>
@@ -38,6 +39,21 @@
     <button class="dialog-close" type="button" aria-label="Закрыть окно">×</button>
     <img class="dialog-image" id="detail-image" src="" alt="">
     <div class="dialog-content"><span class="eyebrow" id="detail-genre"></span><h2 id="detail-title"></h2><p id="detail-description"></p><p class="detail-platforms"><strong>Платформы:</strong> <span id="detail-platforms"></span></p><a class="action" href="login.html">Играть →</a></div>
+  </dialog>
+
+  <dialog class="game-dialog game-editor" id="game-editor" aria-labelledby="editor-title">
+    <button class="dialog-close" id="editor-close" type="button" aria-label="Закрыть окно">×</button>
+    <form id="game-form" class="editor-content">
+      <span class="eyebrow">КАТАЛОГ ИГР</span>
+      <h2 id="editor-title">Добавить игру</h2>
+      <label>Название<input name="title" required maxlength="80"></label>
+      <label>Жанр<input name="genre" required maxlength="80"></label>
+      <label>Изображение (путь или URL)<input name="image" required maxlength="300" placeholder="img/Edition1.jpg"></label>
+      <label>Описание<textarea name="description" required rows="4" maxlength="600"></textarea></label>
+      <label>Платформы (через запятую)<input name="platforms" required placeholder="ПК, смартфон"></label>
+      <p class="editor-error" id="editor-error" role="alert" hidden></p>
+      <div class="editor-actions"><button class="action" type="submit">Сохранить</button><button class="editor-cancel" id="editor-cancel" type="button">Отмена</button></div>
+    </form>
   </dialog>
 </body>
 </html>

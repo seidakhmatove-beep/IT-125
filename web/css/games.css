@@ -15,6 +15,36 @@
   color: #ffc078;
 }
 
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 24px;
+  color: #c1b7ae;
+}
+
+.catalog-toolbar .action,
+.editor-actions .action {
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.game-card-actions {
+  display: flex;
+  gap: 18px;
+}
+
+.game-delete-button {
+  color: #e87963;
+}
+
+.game-delete-button:hover {
+  color: #ff9a84;
+}
+
 .game-dialog {
   position: fixed;
   inset: 0;
@@ -79,6 +109,63 @@
   cursor: pointer;
 }
 
+.editor-content {
+  display: grid;
+  gap: 16px;
+  padding: 32px;
+}
+
+.editor-content h2 {
+  margin-top: -12px;
+  font-size: 30px;
+}
+
+.editor-content label {
+  display: grid;
+  gap: 7px;
+  color: #f5f1ed;
+  font-weight: 500;
+}
+
+.editor-content input,
+.editor-content textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #554337;
+  border-radius: 5px;
+  background: #0e0c0a;
+  color: #f5f1ed;
+  font: inherit;
+}
+
+.editor-content textarea {
+  resize: vertical;
+}
+
+.editor-content input:focus,
+.editor-content textarea:focus {
+  outline: 2px solid #f9952c;
+  outline-offset: 2px;
+}
+
+.editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.editor-cancel {
+  border: 0;
+  background: none;
+  color: #c1b7ae;
+  font: inherit;
+  cursor: pointer;
+}
+
+.editor-error {
+  color: #ff9a84;
+}
+
 @media (max-width: 560px) {
   .dialog-image {
     height: 190px;
@@ -86,5 +173,14 @@
 
   .dialog-content {
     padding: 20px;
+  }
+
+  .editor-content {
+    padding: 24px 20px;
+  }
+
+  .catalog-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
